@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+date=$(date +'%s')
+
+mkdir /tmp/$date
+
+git archive HEAD appliance-api | tar xv -C /tmp/$date -
+
+cd /tmp/$date/appliance-api && git init && git add -A && git commit -m "Initial Commit"
+cd /tmp/$date && tar czvf appliance-api.tgz appliance-api
+
+echo /tmp/$date/appliance-api.tgz
+open /tmp/$date
+
