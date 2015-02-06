@@ -183,6 +183,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   ffaker
+  haml
   jquery-rails
   pry-rails
   puma

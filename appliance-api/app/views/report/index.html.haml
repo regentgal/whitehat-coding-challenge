@@ -1,0 +1,8 @@
+%h1 Reachability Reports
+
+%h3 Pick a customer
+%p
+  = form_tag("/report", method: "post") do
+    = label_tag(:customer, "Choose a customer:")
+    = select_tag(:customer, options_for_select(@customers))
+    = submit_tag("Go")

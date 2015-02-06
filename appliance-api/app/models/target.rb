@@ -8,4 +8,8 @@ class Target < ActiveRecord::Base
 
   validates :address,      presence:   true,
                            format:     {with: Resolv::IPv4::Regex}
+
+  def ping
+    # TODO: Something awesome will go here. But for now
+  end                         
 end
