@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root to: "report#index"
-
-  post '/report', to: "report#show"
+  root to: "report#report"
 
 end

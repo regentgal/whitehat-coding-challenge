@@ -1,0 +1,10 @@
+%h1 Report
+
+%h2 tl;dr
+%p 
+  #{@report.unreachables_count} of #{@report.target_count} Unreachable
+
+%h3 unreachables:
+%ul
+- @report.unreachables.each do |t|
+  %li #{t.hostname} (#{t.address})
