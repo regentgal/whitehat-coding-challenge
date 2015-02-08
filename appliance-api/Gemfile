@@ -16,6 +16,8 @@ gem 'ffaker'
 gem 'timecop'
 gem 'haml'
 gem 'net-ping'
+gem 'eventmachine'
+gem 'em-synchrony'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'

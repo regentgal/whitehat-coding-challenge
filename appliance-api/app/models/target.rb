@@ -1,6 +1,5 @@
-require 'net/ping'
-
 class Target < ActiveRecord::Base
+
   belongs_to :appliance
 
   validates :appliance_id, presence:   true
@@ -11,19 +10,13 @@ class Target < ActiveRecord::Base
   validates :address,      presence:   true,
                            format:     {with: Resolv::IPv4::Regex}
 
-  # TODO: reachable?, ping?, ping! This is yucky...
+  
   def reachable?
-    @reachable ||= false
-  end           
-
-  def ping?
-    # TODO: port configurable so we only use 3000 in dev.
-    p1 = Net::Ping::TCP.new(address, '3000', 1)
-    p1.ping?
+    @reachable || false
   end
 
-  def ping!
-    @reachable = ping?
+  def last_reachable_at=(value)
+    # TODO: Would be nice to track and report based on last_reachable_time.
+    @reachable = true
   end
-
 end
