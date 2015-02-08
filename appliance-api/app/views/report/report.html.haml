@@ -1,10 +1,22 @@
 %h1 Report
 
+%section
+  %canvas#unreachables{:width=>150, :height=>150}
+
 %h2 tl;dr
-%p 
-  #{@report.unreachables_count} of #{@report.target_count} Unreachable
+%ul
+  %li #{@report.sad_customer_count} of #{@report.customer_count} Customers Have Unreachable Targets
+  %li #{@report.unreachable_count} of #{@report.target_count} Targets Unreachable 
 
 %h3 unreachables:
 %ul
 - @report.unreachables.each do |t|
   %li #{t.hostname} (#{t.address})
+
+:javascript
+  buildUnreachablesPie(
+    { 'unreachable': #{@report.unreachable_count},
+      'reachable': #{@report.target_count - @report.unreachable_count}
+    },
+    '#unreachables');
+    
