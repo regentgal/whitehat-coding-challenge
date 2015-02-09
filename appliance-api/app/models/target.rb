@@ -17,6 +17,7 @@ class Target < ActiveRecord::Base
 
   def last_reachable_at=(value)
     # TODO: Would be nice to track and report based on last_reachable_time.
+    # Let someone else decided how long before its unreachable.
     @reachable = true
   end
 end

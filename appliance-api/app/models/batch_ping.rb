@@ -5,12 +5,10 @@ class BatchPing
   def self.ping!(targets)
 
     EM.synchrony do
-      concurrency = 1000 # TODO: lol. really?
+      concurrency = 1000 #lol. really? still better than a 1000 threads.
 
-      # iterator will execute async blocks until completion, .each, .inject also work!
       EM::Synchrony::Iterator.new(targets, concurrency).each do |target, iter|
 
-        # fire async requests, on completion advance the iterator
         ping = EventMachine::Protocols::TcpConnectTester.test(target.address, 3000)
         ping.timeout(1)
         ping.callback do 
