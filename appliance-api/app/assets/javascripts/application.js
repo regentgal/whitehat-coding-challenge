@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.dataTables.min
 //= require Chart.min
 //= require turbolinks
 //= require_tree .

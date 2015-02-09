@@ -1,0 +1,74 @@
+
+body {
+  color: #838383;
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 14px;
+}
+
+h1, h2, h2 {
+  color: #DB7629;
+  font-family: 'Abel', sans-serif;
+}
+
+/* CSS is like violence... */
+tr:not(.group) td:last-child  {
+  text-align: center;
+}
+
+tr.group,
+tr.group:hover {
+  background-color: #515151 !important;
+  color: #DB7629;
+  font-family: 'Abel', sans-serif;
+  text-align: left;
+}
+
+#details_wrapper {
+  width: 80%;
+}
+
+.ninja {
+  display: none;
+}
+
+.logo {
+  float: left;
+}
+
+.title {
+  display: inline-block;
+  margin-left: 15px;
+  height: 72px;
+}
+
+.clear {
+  clear: both;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.container {
+  width: 80%;
+}
+
+.pie {
+  width: 150px;
+  height: 150px;
+  float: left;
+}
+
+.legend {
+  display: inline-block;
+  margin-left: 90px;
+}
+
+.summary {
+  display: inline-block;
+  margin-left: 175px;
+}
+
+.details {
+  width: 80%;
+}

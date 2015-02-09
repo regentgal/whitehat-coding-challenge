@@ -1,22 +1,39 @@
-%h1 Report
+= content_for :report_title do
+  %div.title
+    %h1 Unreachables Report
 
-%section
-  %canvas#unreachables{:width=>150, :height=>150}
-
-%h2 tl;dr
-%ul
-  %li #{@report.sad_customer_count} of #{@report.customer_count} Customers Have Unreachable Targets
-  %li #{@report.unreachable_count} of #{@report.target_count} Targets Unreachable 
-
-%h3 unreachables:
-%ul
-- @report.unreachables.each do |t|
-  %li #{t.hostname} (#{t.address})
+%div.waiting
+  %h2 Please wait while we load your information...
+%div.oops.ninja
+  %h2 We're sorry. We cannot collect the data right now. Try again later.
+%div.overview
+  %div.pie
+    %canvas#unreachables
+  %div.legend
+  %div.summary
+    %h2 Overview
+    %ul
+      %li 
+        %span.sad-count X
+        of #{@customers.count} Customers Have Unreachable Targets
+      %li 
+        %span.unreachable-count X
+        of #{@targets.count} Targets Unreachable 
+  %div.clear
+%table#details.display{:width=>'100%'}
+  %thead
+    %tr
+      %th Customer
+      %th Hostname
+      %th Address
+      %th Reachable?
+  %tbody
+    - @targets.each do |t|
+      %tr
+        %td #{t.appliance.customer}
+        %td #{t.hostname}
+        %td #{t.address}
+        %td NA
 
 :javascript
-  buildUnreachablesPie(
-    { 'unreachable': #{@report.unreachable_count},
-      'reachable': #{@report.target_count - @report.unreachable_count}
-    },
-    '#unreachables');
-    
+  loadPage(#{@targets.count})

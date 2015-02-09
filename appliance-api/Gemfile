@@ -18,10 +18,12 @@ gem 'haml'
 gem 'net-ping'
 gem 'eventmachine'
 gem 'em-synchrony'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'brakeman', require: false
 end
 

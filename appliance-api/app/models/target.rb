@@ -16,8 +16,19 @@ class Target < ActiveRecord::Base
   end
 
   def last_reachable_at=(value)
-    # TODO: Would be nice to track and report based on last_reachable_time.
+    # Someday it would be nice to track and report based on last_reachable_time.
     # Let someone else decided how long before its unreachable.
     @reachable = true
   end
+
+  def as_json(opts = {})
+    super(methods: :reachable?, 
+      only: [:hostname, :address],
+      include: { 
+        appliance: { 
+          only: [:customer, :name]
+      }})
+
+  end
+
 end

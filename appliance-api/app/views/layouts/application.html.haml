@@ -2,8 +2,15 @@
 %html
   %head
     %title ApplianceApi
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Source+Sans+Pro'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Abel'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    %div.container.centered
+      %div.header
+        = image_tag("logo.png", class: "logo")
+        = yield :report_title 
+      %div.clear
+      = yield
