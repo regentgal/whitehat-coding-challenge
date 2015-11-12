@@ -11,12 +11,12 @@ class BatchPing
 
         ping = EventMachine::Protocols::TcpConnectTester.test(target.address, 3000)
         ping.timeout(1)
-        ping.callback do 
-          target.last_reachable_at = Time.now
-          iter.next 
+        ping.callback do
+          target.last_reachable_at = Time.now.utc
+          iter.next
         end
         ping.errback { iter.next }
-      
+
       end
       EventMachine.stop
     end

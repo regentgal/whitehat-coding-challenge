@@ -1,16 +1,16 @@
 require 'spec_helper'
 
 describe Report, :type => :model do
-  
+
   let(:customers) {
     appliances = ["Bob", "Linda", "Amy"].map {|s| Appliance.new(customer: s, name: s) }
 
-    appliances.each do |a| 
-      a.targets << Target.new(hostname: a.customer, address: "127.0.0.1", appliance_id: a.id)      
+    appliances.each do |a|
+      a.targets << Target.new(hostname: a.customer, address: "127.0.0.1", appliance_id: a.id)
     end
 
-    appliances.first.targets.first.last_reachable_at = Time.now
-    
+    appliances.first.targets.first.last_reachable_at = Time.now.utc
+
     appliances
   }
 
@@ -20,7 +20,7 @@ describe Report, :type => :model do
 
   describe '#customer_count' do
     it 'returns the correct number of customers' do
-      expect(@report.customer_count).to eq(customers.count)    
+      expect(@report.customer_count).to eq(customers.count)
     end
   end
 
@@ -32,7 +32,7 @@ describe Report, :type => :model do
   end
 
   describe "#unreachable_count" do
-    it 'returns the correct number of unreachable targets' do  
+    it 'returns the correct number of unreachable targets' do
       unreachables = customers.map { |a| a.targets }.flatten.select { |t| !t.reachable? }
       expect(@report.unreachable_count).to eq(unreachables.count)
     end
@@ -41,7 +41,7 @@ describe Report, :type => :model do
   describe "#target_count" do
     it 'returns he correct number of targets' do
       targets = customers.map {|c| c.targets}.flatten
-      expect(@report.target_count).to eq(targets.count)      
+      expect(@report.target_count).to eq(targets.count)
     end
   end
 
