@@ -24,6 +24,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rubocop'
   gem 'brakeman', require: false
 end
 
