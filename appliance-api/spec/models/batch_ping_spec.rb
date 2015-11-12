@@ -4,7 +4,7 @@ require 'em-synchrony'
 describe BatchPing, :type => :model do
 
   let(:targets){
-    targets = (1..5).map { |n| Target.new(hostname: n, address: n) }
+    (1..5).map { |n| Target.new(hostname: n, address: n) }
   }
 
   describe '#ping!' do
