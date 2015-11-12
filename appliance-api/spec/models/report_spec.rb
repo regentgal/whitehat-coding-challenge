@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Report, :type => :model do
 
-  let(:customers) {
+  let(:customers) do
     appliances = ["Bob", "Linda", "Amy"].map {|s| Appliance.new(customer: s, name: s) }
 
     appliances.each do |a|
@@ -12,7 +12,7 @@ describe Report, :type => :model do
     appliances.first.targets.first.last_reachable_at = Time.now.utc
 
     appliances
-  }
+  end
 
   before :each do
     @report = Report.new(customers)
