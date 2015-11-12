@@ -6,18 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Lint/UnusedMethodArgument:
-#   Exclude:
-#     - 'app/models/target.rb'
-
-# # Offense count: 1
-# Lint/UselessAssignment:
-#   Exclude:
-#     - 'spec/models/batch_ping_spec.rb'
-
 # Offense count: 1
 Metrics/AbcSize:
   Max: 17
@@ -31,12 +19,6 @@ Metrics/LineLength:
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
   Max: 14
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Performance/Count:
-  Exclude:
-    - 'app/models/report.rb'
 
 # Offense count: 2
 # Configuration parameters: EnforcedStyle, SupportedStyles.
