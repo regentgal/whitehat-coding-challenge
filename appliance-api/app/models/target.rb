@@ -10,7 +10,6 @@ class Target < ActiveRecord::Base
   validates :address,      presence:   true,
                            format:     {with: Resolv::IPv4::Regex}
 
-  
   def reachable?
     @reachable || false
   end
@@ -22,12 +21,13 @@ class Target < ActiveRecord::Base
   end
 
   def as_json(opts = {})
-    super(methods: :reachable?, 
+    super(
+      methods: :reachable?,
       only: [:hostname, :address],
-      include: { 
-        appliance: { 
+      include: {
+        appliance: {
           only: [:customer, :name]
-      }})
+        }})
 
   end
 

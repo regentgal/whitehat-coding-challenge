@@ -17,13 +17,13 @@ describe Target, :type => :model do
     it "fails missing hostname" do
       target = Target.new address: '8.8.8.8', appliance: appliance
       expect(target.valid?).to be(false)
-    end 
+    end
 
     it "fails mising appliance id" do
       target = Target.new hostname: 'foo', address: '8.8.8.8'
       expect(target.valid?).to be(false)
     end
-end
+  end
 
   describe "#address" do
     it "fails bad IP addresses" do
@@ -32,12 +32,12 @@ end
     end
   end
 
-  describe "#hostname" do  
+  describe "#hostname" do
     it "validates unique hostnames" do
       Target.create hostname: 'foo', address: '8.8.8.8', appliance: appliance
       target = Target.new hostname: 'foo', address: '8.8.8.8', appliance: appliance
-      expect{target.save!}.to raise_error(ActiveRecord::RecordInvalid)    
-    end   
+      expect{target.save!}.to raise_error(ActiveRecord::RecordInvalid)
+    end
   end
 
 end

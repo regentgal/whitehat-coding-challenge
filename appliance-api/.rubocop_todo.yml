@@ -6,11 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Lint/BlockAlignment:
-  Exclude:
-    - 'spec/models/target_spec.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -47,20 +42,6 @@ Performance/Count:
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Rails/TimeZone:
   Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
-Style/AlignHash:
-  Exclude:
-    - 'app/models/target.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/AlignParameters:
-  Exclude:
-    - 'spec/models/batch_ping_spec.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -114,19 +95,6 @@ Style/GuardClause:
 # Configuration parameters: EnforcedStyle, SupportedStyles, UseHashRocketsWithSymbolValues.
 Style/HashSyntax:
   Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/IndentHash:
-  Enabled: true
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-  Exclude:
-    - 'spec/models/target_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
