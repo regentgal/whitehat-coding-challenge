@@ -20,12 +20,6 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 14
 
-# Offense count: 1
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'db/seeds.rb'
-
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, UseHashRocketsWithSymbolValues.

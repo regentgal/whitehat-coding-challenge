@@ -11,11 +11,11 @@ def create_appliance
 
   rand(MAX_TARGETS_PER_APPLIANCE + 1).times { create_target(appliance) }
 
-  if rand(100) > 90
-    Target.create! appliance: appliance,
-                   hostname:  randomize('localhost'),
-                   address:   '127.0.0.1'
-  end
+  return if rand(100) > 90
+
+  Target.create! appliance: appliance,
+                 hostname:  randomize('localhost'),
+                 address:   '127.0.0.1'
 end
 
 def create_target(appliance)
