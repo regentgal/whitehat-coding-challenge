@@ -21,41 +21,6 @@ Metrics/MethodLength:
   Max: 14
 
 # Offense count: 1
-# Cop supports --auto-correct.
-Style/EmptyLines:
-  Exclude:
-    - 'Gemfile'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/EmptyLinesAroundAccessModifier:
-  Exclude:
-    - 'app/controllers/report_controller.rb'
-
-# Offense count: 10
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/EmptyLinesAroundMethodBody:
-  Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment.
-Style/ExtraSpacing:
-  Enabled: false
-
-# Offense count: 1
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
   Exclude:
@@ -69,32 +34,8 @@ Style/HashSyntax:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/LeadingCommentSpace:
-  Exclude:
-    - 'app/models/batch_ping.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 Style/NumericLiterals:
   MinDigits: 7
-
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/SpaceBeforeBlockBraces:
-  Enabled: false
-
-# Offense count: 23
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
-Style/SpaceInsideBlockBraces:
-  Enabled: false
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SupportedStyles.
-Style/SpaceInsideHashLiteralBraces:
-  Enabled: false
 
 # Offense count: 39
 # Cop supports --auto-correct.
@@ -106,17 +47,6 @@ Style/StringLiterals:
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoredMethods.
 Style/SymbolProc:
-  Enabled: false
-
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/TrailingBlankLines:
-  Enabled: false
-
-# Offense count: 29
-# Cop supports --auto-correct.
-Style/TrailingWhitespace:
   Enabled: false
 
 # Offense count: 2

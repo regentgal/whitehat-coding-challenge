@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Appliance, :type => :model do
   describe "#new" do
-    
     it "validates presence of name and customer" do
       appliance = Appliance.new name: 'app1', customer: 'WhiteHat'
       expect(appliance.valid?).to be(true)
@@ -11,7 +10,7 @@ describe Appliance, :type => :model do
     it "validates unique appliance names" do
       Appliance.create name: 'app1', customer: 'WhiteHat'
       appliance = Appliance.new name: 'app1', customer: 'WhiteHat'
-      expect{appliance.save!}.to raise_error(ActiveRecord::RecordInvalid)
+      expect { appliance.save! }.to raise_error(ActiveRecord::RecordInvalid)
     end
 
     it "fails missing name" do
@@ -23,6 +22,5 @@ describe Appliance, :type => :model do
       appliance = Appliance.new name: 'app1'
       expect(appliance.valid?).to be(false)
     end
-
   end
 end

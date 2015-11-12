@@ -1,5 +1,4 @@
 class Target < ActiveRecord::Base
-
   belongs_to :appliance
 
   validates :appliance_id, presence:   true
@@ -8,7 +7,7 @@ class Target < ActiveRecord::Base
                            uniqueness: true
 
   validates :address,      presence:   true,
-                           format:     {with: Resolv::IPv4::Regex}
+                           format:     { with: Resolv::IPv4::Regex }
 
   def reachable?
     @reachable || false
@@ -27,8 +26,6 @@ class Target < ActiveRecord::Base
       include: {
         appliance: {
           only: [:customer, :name]
-        }}}.merge(opts))
-
+        } } }.merge(opts))
   end
-
 end

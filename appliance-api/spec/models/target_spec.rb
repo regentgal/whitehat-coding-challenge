@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Target, :type => :model do
-  let(:appliance) {Appliance.create! name: 'app1', customer: 'WhiteHat'}
+  let(:appliance) { Appliance.create! name: 'app1', customer: 'WhiteHat' }
 
   describe "#new" do
     it "validates IP addresses" do
@@ -36,8 +36,7 @@ describe Target, :type => :model do
     it "validates unique hostnames" do
       Target.create hostname: 'foo', address: '8.8.8.8', appliance: appliance
       target = Target.new hostname: 'foo', address: '8.8.8.8', appliance: appliance
-      expect{target.save!}.to raise_error(ActiveRecord::RecordInvalid)
+      expect { target.save! }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
-
 end

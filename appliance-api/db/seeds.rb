@@ -9,7 +9,7 @@ def create_appliance
   appliance = Appliance.create! name:     randomize(Faker::Internet.domain_name),
                                 customer: Faker::Company.name
 
-  rand(MAX_TARGETS_PER_APPLIANCE + 1).times {create_target(appliance)}
+  rand(MAX_TARGETS_PER_APPLIANCE + 1).times { create_target(appliance) }
 
   if rand(100) > 90
     Target.create! appliance: appliance,
@@ -24,4 +24,4 @@ def create_target(appliance)
                  address:   Faker::Internet.ip_v4_address
 end
 
-APPLIANCES.times {create_appliance}
+APPLIANCES.times { create_appliance }
