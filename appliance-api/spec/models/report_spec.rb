@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Report, :type => :model do
+describe Report, type: :model do
   let(:customers) do
     appliances = ["Bob", "Linda", "Amy"].map { |s| Appliance.new(customer: s, name: s) }
 

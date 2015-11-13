@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'em-synchrony'
 
-describe BatchPing, :type => :model do
+describe BatchPing, type: :model do
   let(:targets) { (1..5).map { |n| Target.new(hostname: n, address: n) } }
 
   describe '#ping!' do

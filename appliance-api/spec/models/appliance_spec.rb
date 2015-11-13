@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appliance, :type => :model do
+describe Appliance, type: :model do
   describe "#new" do
     it "validates presence of name and customer" do
       appliance = Appliance.new name: 'app1', customer: 'WhiteHat'

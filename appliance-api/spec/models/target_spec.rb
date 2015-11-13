@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Target, :type => :model do
+describe Target, type: :model do
   let(:appliance) { Appliance.create! name: 'app1', customer: 'WhiteHat' }
 
   describe "#new" do
