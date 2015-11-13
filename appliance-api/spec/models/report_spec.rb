@@ -32,21 +32,21 @@ describe Report, type: :model do
 
   describe '#unreachable_count' do
     it 'returns the correct number of unreachable targets' do
-      unreachables = customers.map { |a| a.targets }.flatten.select { |t| !t.reachable? }
+      unreachables = customers.map(&:targets).flatten.select { |t| !t.reachable? }
       expect(@report.unreachable_count).to eq(unreachables.count)
     end
   end
 
   describe '#target_count' do
     it 'returns he correct number of targets' do
-      targets = customers.map { |c| c.targets }.flatten
+      targets = customers.map(&:targets).flatten
       expect(@report.target_count).to eq(targets.count)
     end
   end
 
   describe '#target' do
     it 'returns the correct list of targets' do
-      targets = customers.map { |c| c.targets }.flatten
+      targets = customers.map(&:targets).flatten
       expect(@report.targets).to match_array(targets)
     end
   end

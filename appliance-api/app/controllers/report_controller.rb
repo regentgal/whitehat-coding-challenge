@@ -16,7 +16,7 @@ class ReportController < ApplicationController
   # use some fault tolerance time/criteria to determine if it's reachable
   def load_data
     @customers = Appliance.all
-    @targets = @customers.map { |a| a.targets }.flatten
+    @targets = @customers.map(&:targets).flatten
   end
 
   def load_report
