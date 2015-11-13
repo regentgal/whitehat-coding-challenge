@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Report, type: :model do
   let(:customers) do
-    appliances = ['Bob', 'Linda', 'Amy'].map { |s| Appliance.new(customer: s, name: s) }
+    appliances = %w(Bob Linda Amy).map { |s| Appliance.new(customer: s, name: s) }
 
     appliances.each do |a|
       a.targets << Target.new(hostname: a.customer, address: '127.0.0.1', appliance_id: a.id)
