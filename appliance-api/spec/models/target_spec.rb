@@ -19,7 +19,7 @@ describe Target, type: :model do
       expect(target.valid?).to be(false)
     end
 
-    it 'fails mising appliance id' do
+    it 'fails missing appliance id' do
       target = Target.new hostname: 'foo', address: '8.8.8.8'
       expect(target.valid?).to be(false)
     end
