@@ -2,7 +2,7 @@ APPLIANCES = 1000
 MAX_TARGETS_PER_APPLIANCE = 5
 
 def randomize(string)
-  "#{rand 100000}-#{string}"
+  "#{rand 100_000}-#{string}"
 end
 
 def create_appliance

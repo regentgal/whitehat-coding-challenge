@@ -1,4 +1,4 @@
-require "em-synchrony"
+require 'em-synchrony'
 
 class BatchPing
   def self.ping!(targets)

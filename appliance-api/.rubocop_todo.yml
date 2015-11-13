@@ -20,17 +20,6 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 14
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/NumericLiterals:
-  MinDigits: 7
-
-# Offense count: 39
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/StringLiterals:
-  Enabled: false
-
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoredMethods.

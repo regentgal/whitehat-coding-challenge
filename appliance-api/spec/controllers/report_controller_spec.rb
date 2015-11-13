@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe ReportController do
   before :each do
-    @appliances = ["Bob", "Linda", "Amy"].map { |s| Appliance.create(customer: s, name: s) }
+    @appliances = ['Bob', 'Linda', 'Amy'].map { |s| Appliance.create(customer: s, name: s) }
 
     @appliances.each do |a|
-      Target.create(hostname: a.customer, address: "127.0.0.1", appliance_id: a.id)
+      Target.create(hostname: a.customer, address: '127.0.0.1', appliance_id: a.id)
     end
   end
 
